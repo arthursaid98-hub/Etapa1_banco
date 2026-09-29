@@ -1,0 +1,143 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    int numeroConta, tipoConta, opcao;
+    string cliente, cpf, ativar;
+    double saldo;
+    bool contaAtiva;
+    char troca;
+
+    
+        
+    cout << "   ******** BANCO MASTER ********   " <<endl;
+    
+    while(opcao!=6){
+    cout << "1 - Cadastrar conta" << endl;
+    cout << "2 - Consultar conta" << endl;  
+    cout << "3 - Verificar saldo" << endl;
+    cout << "4 - Alterar tipo da conta" <<endl;
+    cout << "5 - Ativar/Desativar conta"<<endl;
+    cout << "6 – Sair " << endl<<endl;
+    cout << "Selecione uma opção: ";
+    cin >> opcao;
+    
+     switch(opcao){
+        
+       case 1: cout << "Para casdastrar, digite o número da conta: ";
+       cin >> numeroConta;
+       
+       
+       while(numeroConta < 0){
+       
+           cout << "Número inválido. Tente novamente: ";
+           cin >> numeroConta;
+       
+       }
+            cout << "Número cadastrado!" <<endl<<endl;
+            
+        cin.ignore();  //para limpar cachê da resposta anterior
+            
+         cout << "Nome do titular: ";
+         getline (cin, cliente);
+         
+         cin.ignore(); //para limpar cachê da resposta anterior
+         
+         cout << "Digite seu CPF: ";
+         getline (cin, cpf);
+         
+         cin.ignore();
+         
+         cout << "Defina o saldo da sua conta: ";
+         cin >> saldo;
+         
+         while(saldo < 0){
+             cout << "Saldo não pode ser negativo. Defina outro saldo: ";
+             cin >> saldo;
+         }
+         
+         cout << "Saldo definido!!" <<endl<<endl;
+         
+         cin.ignore();  //para limpar cachê da resposta anterior
+         
+         cout << "Selecione o tipo da conta. Sendo 1 = corrente e 2 = poupança: ";
+         cin >> tipoConta;
+         
+         while(tipoConta < 1 || tipoConta > 2){
+             cout << "Opção inválida. Selecione 1 ou 2: ";
+             cin >> tipoConta;
+         }
+         
+         cout << "Tipo de conta selecionado com sucesso!!"<<endl<<endl;
+         
+         
+         
+         cout << "Sua conta está cadastrada com sucesso"<<endl<<endl; break;
+            
+        
+        case 2:  cout << "Dados da conta"<<endl;
+       cout << "numero da conta: "<<numeroConta<<""<<endl;
+       cout << "nome do titular: "<<cliente<<""<<endl;
+       cout << "cpf: "<<cpf<<""<<endl;
+       cout << "tipo da conta: "<<tipoConta<<""<<endl;
+       cout << "Sua conta atualmente está(sendo 1 ativada e 0 desativada):  "<<contaAtiva<<""<<endl<<endl;
+       break;
+        
+        case 3:  cout << "Seu saldo atual é: "<<saldo<<""<<endl<<endl; break;
+        
+        case 4:  cout << "Deseja alterar o tipo "<<tipoConta<<" para o outro?(s/n):  ";
+                 cin >> troca;
+        
+        if(troca == 's' || troca == 'S'){
+         cout << "Digite o novo tipo de conta: ";
+         cin >> tipoConta;
+         cout << "Troca realizada!!"<<endl<<endl;
+        }
+        
+        else{
+            cout << "Troca cancelada"<<endl<<endl;
+        }
+        
+        break;
+        
+        case 5:  cout << "Deseja ativar ou desativar sua conta? ";
+                 cin >> ativar;
+                 
+                 if(ativar == "ativar" ){
+                     contaAtiva = true;
+                    cout << "Conta ativada com sucesso!!"<<endl<<endl;
+                    
+                 }
+                 
+                 else if(ativar == "desativar"){
+                     contaAtiva = false;
+                     cout << "Conta desativada com sucesso"<<endl<<endl;
+                 }
+                 
+                 
+                 
+        
+        break;
+        
+        case 6:  cout << "Saindo do sistema...\n\n";
+        cout << "Sistema encerrado";
+        break;
+        
+        default: cout << "Opção inválida";
+     }
+    }
+    
+  
+    
+  
+    
+  
+    
+ 
+
+
+    return 0;
+}
