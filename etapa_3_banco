@@ -231,7 +231,6 @@ int main()
         switch (opcao)
         {
 
-            // CADASTRAR CONTA
             case 1:
             {
                 if (quantidadeContas >= MAX_CONTAS)
@@ -305,7 +304,6 @@ int main()
             }
 
 
-            // LISTAR CONTAS
             case 2:
             {
                 if (quantidadeContas == 0)
@@ -340,7 +338,6 @@ int main()
             }
 
 
-            // CONSULTAR CONTA
             case 3:
             {
                 int numero;
@@ -377,7 +374,6 @@ int main()
             }
 
 
-            // DEPOSITO
             case 4:
             {
                 int numero;
@@ -436,7 +432,6 @@ int main()
             }
 
 
-            // SAQUE
             case 5:
             {
                 int numero;
@@ -502,7 +497,6 @@ int main()
             }
 
 
-            // TRANSFERENCIA
             case 6:
             {
                 int origem, destino;
@@ -593,7 +587,6 @@ int main()
             }
 
 
-            // EXTRATO
             case 7:
             {
                 int numero;
@@ -648,7 +641,6 @@ int main()
             }
 
 
-            // ALTERAR TIPO DA CONTA
             case 8:
             {
                 int numero, novoTipo;
@@ -686,8 +678,6 @@ int main()
                 break;
             }
 
-
-            // ATIVAR OU DESATIVAR CONTA
             case 9:
             {
                 int numero;
@@ -745,7 +735,6 @@ int main()
             }
 
 
-            // SAIR DO SISTEMA
             case 10:
             {
                 salvarContas();
